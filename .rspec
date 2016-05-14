@@ -1,0 +1,8 @@
+--format html
+--out rspec_results2.html
+
+--require spec_helper
+#--only-failures
+#--order random
+--format documentation
+

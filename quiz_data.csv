@@ -1,0 +1,68 @@
+Manual Steps,question_text,id,correct_answer_message
+GETTING STARTED,Saving money starts with ________________. (Which is the most important?),label_for_q1_a1,That is correct! You will only save money when it becomes very important to you.
+GETTING STARTED,What is the first Baby Step?,label_for_q2_a2,Yes! Great start! That’s Baby Step 1!
+GETTING STARTED,"If you are working on Baby Step 1 and you make $750 from a garage sale, what is the best use for this money?",label_for_q3_a3,Correct! That is a great jumpstart (or a great finish) on your starter emergency fund.
+GETTING STARTED,Your emergency fund is ______________.,label_for_q4_a4,Exactly! Your emergency fund is short-term savings to handle any emergency “life” issues that come up.
+GETTING STARTED,How much of their take-home pay do most Americans send to nonmortgage debt payments?,label_for_q5_a3,Yes! Just think of what could be done with that extra money.
+end ,Great job! You have completed:,,
+Saving for the Future,What are identified as the three reasons why you should save money?,label_for_q1_a3,Fantastic! That is exactly correct. Great job!
+Saving for the Future,What is the most important thing you should have now for an enjoyable retirement later?,label_for_q2_a2,Exactly. You are in charge of what your retirement can look like. So get planning and start taking the right steps.
+Saving for the Future,Building wealth is a ___________.,label_for_q3_a1,"Yes! Remember, building wealth is a long-term plan, so pace yourself."
+Saving for the Future,What was the key to Ben retiring with more money than Arthur?,label_for_q4_a4,Correct! Compound interest created a mathematical explosion with Ben’s investment.
+Saving for the Future,"$1,000 invested at 6% and left alone would grow to approximately $10,000 in 40 years. What would it grow to at 12% (double the rate)?",label_for_q5_a3,Exactly. Isn’t that incredible? Just doubling the rate produced a huge return as a result.
+end ,Great job! You have completed:,,
+The Power of Budgeting,Personal finance is 80% ___________ and 20% ___________.,label_for_q1_a2,That’s right! There is no magic number that will change your life. You have to change your behavior.
+The Power of Budgeting,"With all of the financial conveniences today, we have forgotten what money ___________.",label_for_q2_a3,Correct! There is emotion attached to the spending of money. You need to feel that.
+The Power of Budgeting,Learning to create a budget is a skill that takes ___________.,label_for_q3_a2,"Exactly! Practice makes perfect, but it will take you a few months before you get the hang of it. Good job."
+The Power of Budgeting,Managed money feels like ___________.,label_for_q4_a4,Yes! A budget assigns every dollar a task before the month begins. You will even find that money that keeps disappearing.
+The Power of Budgeting,What are the Four Walls?,label_for_q5_a3,"Exactly! Make sure these are all taken care of before anything else, especially debt payments."
+end ,Great job! You have completed:,,
+Relating With Money,The number-one cause of divorce in North America is _________.,label_for_q1_a2,Yes. A huge majority of those who divorce report that it is due to money fights and money problems.
+Relating With Money,Money represents the _________ from which a family operates.,label_for_q2_a4,Fantastic! Well done.
+Relating With Money,Who would be the best person to prepare the first draft of the budget?,label_for_q3_a3,Yes! The Nerd is probably best equipped to put together the first draft—but then it must be discussed. Good job.
+Relating With Money,What is the purpose of the monthly budget committee meeting?,label_for_q4_a1,Fantastic. That is correct. You both need to agree on a plan—and then stick to it.
+Relating With Money,"For men, money represents __________; for women, money represents _____________.",label_for_q5_a2,That is correct. Men and women tend to view money differently.
+end ,Great job! You have completed:,,
+Building a Budget,The recommended way to budget is the _______-based budget.,label_for_q1_a3,Correct. A zero-based budget assigns every dollar a task. Great job!
+Building a Budget,What is the envelope system?,label_for_q2_a1,"Great! Envelopes for such things as food, fuel and clothing really help keep your budget balanced. Way to go!"
+Building a Budget,True or false? Electronic bill payments (ePayments) are a great way to pay utility bills. ,label_for_q3_a2,Yes they are. Just make sure you keep track of them in your budget.
+Building a Budget,"Related to your checking account, what does NSF stand for?",label_for_q4_a4,Exactly! You did not have enough money in your account to cover your purchase so the bank charged you a huge fee to penalize you. Ouch!
+Building a Budget,What is Baby Step 3?,label_for_q5_a2,Fantastic! That is the goal to shoot for—just figure out what your expenses are for that amount of time then keep it in savings.
+end ,Great job! You have completed:,,
+Breaking the Chains of Debt,"True or false? Debt is just a way of life—always has been, always will be.",label_for_q1_a1,Exactly. Consumer debt is a relatively recent product. You can live life debt free.
+Breaking the Chains of Debt,_________ is one of the most aggressively marketed products today.,label_for_q2_a3,Yes! The marketing of credit is big business just so you can rack up more debt.
+Breaking the Chains of Debt,"A lot of people are confused with what it means to be debt-free. From these four examples, identify who really is debt-free.",label_for_q3_a2,Yes! Wouldn’t that feel great to have no debt hanging over you?
+Breaking the Chains of Debt,The FICO score is really an “________” score.,label_for_q4_a4,Exactly. All of the measurements used to factor your FICO score relate to debt in some form.
+Breaking the Chains of Debt,The quickest and best way to build wealth is to _____________.,label_for_q5_a1,Yes! And he preferred cash payments. Good job!
+end ,Great job! You have completed:,,
+The Truth About Debt,What is it you can do with a credit card that you can’t do with a debit card?,label_for_q1_a4,Exactly. You can use a debit card anywhere and for anything you would use a credit card.
+The Truth About Debt,Fast-food restaurants discovered that people _______________ when they pay with plastic instead of cash.,label_for_q2_a3,Exactly. Great job!
+The Truth About Debt,Leasing a car is the _______________ way to operate a vehicle.,label_for_q3_a2,Yes! Car dealers make more money when you lease.
+The Truth About Debt,A new car loses what percentage of its value within the first four years?,label_for_q4_a3,"Yes. Can you believe it? If you take out a loan for that car, you will probably owe more than the car is worth after just four years."
+The Truth About Debt,You can’t ___________ your way out of debt.,label_for_q5_a1,Exactly. Taking on more debt or just moving debts around won’t change your behavior.
+end ,Great job! You have completed:,,
+ Dumping Debt,True or false? Debt is a tool that should be used to create prosperity.,label_for_q1_a2,"Exactly! Remember: On average, people send 24% of their take-home pay to debt payments!"
+ Dumping Debt,"When surveyed, 75% of the Forbes 400 said this was the key to building wealth:",label_for_q2_a3,"Yes! Once you are debt-free, you can make the most out of your largest wealth-building tool: your income."
+ Dumping Debt,What is the first step to getting out of debt?,label_for_q3_a3,Exactly! In order to break the cycle of debt you need to start by stopping the destructive behavior.
+ Dumping Debt,"Listing your debts, smallest to largest, is the first step of the ___________.",label_for_q4_a4,"Exactly. As you pay off each smaller debt, you pick up more money to use to attack the other debts."
+ Dumping Debt,"If you had the following four credit card debts, which would be the first one to attack if you were following the debt snowball?",label_for_q5_a1,"That is correct. Always pay the smallest debt first, regardless of interest rate. Once that one is gone, roll the payment into the next smallest."
+end ,Great job! You have completed:,,
+The Pinnacle Point,"What is the pinnacle point, related to investing?",label_for_q1_a2,Yes! This is the point where your money is truly working for you.
+The Pinnacle Point,What is considered long-term investing?,label_for_q2_a3,Exactly. This is money you are going to invest and leave alone so compound interest can work its magic.
+The Pinnacle Point,What is Baby Step 4?,label_for_q3_a1,"Yep. 15%, not 10% and not 18%. Just 15%. There are other Baby Steps to attack."
+The Pinnacle Point,"Dave said, ""If you think money is ___________, you will never do anything with it.""",label_for_q4_a1,Exactly. Good job.
+The Pinnacle Point,"Money, by itself, is not good or evil; it is _______________.",label_for_q5_a4,Correct. Money has no morals. It is neither good nor bad; it is just money.
+end ,Great job! You have completed:,,
+Investing Basics,Zero dollars invested at 12% will provide you how much over 40 years?,label_for_q1_a1,"Absolutely. If you don’t invest any money, you won’t earn any money. There is no retirement fairy waiting to bless you."
+Investing Basics,Which of the following is not used as an example of the market?,label_for_q2_a3,"Correct! While it is a lot of fun, flinging flying discs around a wooded park has nothing to do with the market. Unless you are just haphazardly flinging money at investments—and we don’t recommend that."
+Investing Basics,"Two months after the 9/11 terrorist attacks, the market __________.",label_for_q3_a2,"Absolutely! Within two months, the market was back to where it had been the day before the attacks."
+Investing Basics,What can you do to avoid the risk of inflation?,label_for_q4_a3,Exactly. You need to avoid having your investments get tackled from behind when they are earning less than inflation.
+Investing Basics,What does diversification mean?,label_for_q5_a4,Correct. The best way to protect your investment eggs is to put them in a bunch of different baskets.
+end ,Great job! You have completed:,,
+Retirement Plans,What are the three main types of investments identified in this lesson?,label_for_q1_a2,"Yes, that is correct. Great job!"
+Retirement Plans,True or false? Buying single stocks is a great way to build wealth.,label_for_q2_a2,Correct. Always buy stock within mutual funds that contain lots of different stocks.
+Retirement Plans,What does “tax-deferred” mean?,label_for_q3_a3,"Correct. You will still have to pay taxes on the money, but not until you take it out, preferably at retirement."
+Retirement Plans,What is a 401(k)?,label_for_q4_a1,"Yes. And if your company provides matching funds, that ends up being extra “free money” to help you prepare for retirement."
+Retirement Plans,What is the big deal with a Roth 401(k)?,label_for_q5_a4,"Exactly! And you know what we call tax-free: free money! That is a great thing, so take advantage of Roth plans."
+end ,Great job! You have completed:,,
+,True or false? Borrowing against your 401(k) is a great way to get cash to pay for a car or an emergency.,,

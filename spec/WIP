@@ -1,0 +1,267 @@
+require_relative 'spec_helper'
+require_relative '../pages/SDVideoSmokeTest.rb'
+require_relative '../pages/SDLogin.rb'
+require_relative '../pages/SDLessonQuiz.rb'
+require 'csv'
+require 'securerandom'
+require 'pry'
+
+describe 'Answer all lesson quiz questions' do
+
+
+
+  it 'The GETTING STARTED ianswer quiz questions correctly', :run_on_sauce => true do
+    @sd_log_in.with(@email_address, 'Password9*')
+    @sd_vid_smoke.go_to_lessons
+    @sd_vid_smoke.go_to_video_and_play('/app/lesson/video/42', '/app/lesson/video/392', 10, 'Getting Started')
+    @sd_vid_smoke.play_selected_video
+    @sd_vid_smoke.wait_for_currently_playing
+    @sd_vid_smoke.set_video_position(1022)
+    @sd_vid_smoke.wait_for_video2_to_complete(200)
+    @sd_lesson_quiz.answer_quiz_question('Saving money starts with ________________. (Which is the most important?)','label_for_q1_a1','That is correct! You will only save money when it becomes very important to you.')
+    @sd_lesson_quiz.answer_quiz_question('What is the first Baby Step?','label_for_q2_a2','Yes! Great start! That’s Baby Step 1!' )
+    @sd_lesson_quiz.answer_quiz_question('If you are working on Baby Step 1 and you make $750 from a garage sale, what is the best use for this money?','label_for_q3_a3','Correct! That is a great jumpstart (or a great finish) on your starter emergency fund.' )
+    @sd_lesson_quiz.answer_quiz_question('Your emergency fund is ______________.','label_for_q4_a4','Exactly! Your emergency fund is short-term savings to handle any emergency “life” issues that come up.' )
+    @sd_lesson_quiz.answer_quiz_last('How much of their take-home pay do most Americans send to nonmortgage debt payments?','label_for_q5_a3','Yes! Just think of what could be done with that extra money.' )
+  end
+
+  it 'SAVING FOR THE FUTURE video should complete without error', :run_on_sauce => true do
+    @sd_log_in.with(@email_address, 'Password9*')
+    @sd_vid_smoke.go_to_lessons
+    @sd_vid_smoke.go_to_video_and_play('/app/lesson/video/62', '/app/lesson/video/412', 10, 'Saving for the Future')
+    @sd_vid_smoke.play_selected_video
+    @sd_vid_smoke.wait_for_currently_playing
+    @sd_vid_smoke.set_video_position(1399)
+    @sd_vid_smoke.switch_to_current_window
+    @sd_vid_smoke.wait_for_video3_to_complete(200)
+    @sd_lesson_quiz.answer_quiz_question('What are identified as the three reasons why you should save money?','label_for_q1_a3','Fantastic! That is exactly correct. Great job!' )
+    @sd_lesson_quiz.answer_quiz_question('What is the most important thing you should have now for an enjoyable retirement later?','label_for_q2_a2','Exactly. You are in charge of what your retirement can look like. So get planning and start taking the right steps.' )
+    @sd_lesson_quiz.answer_quiz_question('Building wealth is a ___________.','label_for_q3_a1','Yes! Remember, building wealth is a long-term plan, so pace yourself.' )
+    @sd_lesson_quiz.answer_quiz_question('What was the key to Ben retiring with more money than Arthur?','label_for_q4_a4','Correct! Compound interest created a mathematical explosion with Ben’s investment.' )
+    @sd_lesson_quiz.answer_quiz_last('$1,000 invested at 6% and left alone would grow to approximately $10,000 in 40 years. What would it grow to at 12% (double the rate)?','label_for_q5_a3','Exactly. Isn’t that incredible? Just doubling the rate produced a huge return as a result.' )
+  end
+
+  it 'POWER OF BUDGETING video should complete without error', :run_on_sauce => true do
+    @sd_log_in.with(@email_address, 'Password9*')
+    @sd_vid_smoke.go_to_lessons
+    @sd_vid_smoke.go_to_video_and_play('/app/lesson/video/82', '/app/lesson/video/432', 10, 'The Power of Budgeting')
+    @sd_vid_smoke.play_selected_video
+    @sd_vid_smoke.wait_for_currently_playing
+    @sd_vid_smoke.set_video_position(841)
+    @sd_vid_smoke.switch_to_current_window
+    @sd_vid_smoke.wait_for_video4_to_complete(200)
+    @sd_lesson_quiz.answer_quiz_question('Personal finance is 80% ___________ and 20% ___________.','label_for_q1_a2','That’s right! There is no magic number that will change your life. You have to change your behavior.' )
+    @sd_lesson_quiz.answer_quiz_question('With all of the financial conveniences today, we have forgotten what money ___________.','label_for_q2_a3','Correct! There is emotion attached to the spending of money. You need to feel that.' )
+    @sd_lesson_quiz.answer_quiz_question('Learning to create a budget is a skill that takes ___________.','label_for_q3_a2','Exactly! Practice makes perfect, but it will take you a few months before you get the hang of it. Good job.' )
+    @sd_lesson_quiz.answer_quiz_question('Managed money feels like ___________.','label_for_q4_a4','Yes! A budget assigns every dollar a task before the month begins. You will even find that money that keeps disappearing.' )
+    @sd_lesson_quiz.answer_quiz_last('What are the Four Walls?','label_for_q5_a3','Exactly! Make sure these are all taken care of before anything else, especially debt payments.' )
+  end
+
+  it 'RELATING WITH MONEY video should complete without error', :run_on_sauce => true do
+    @sd_log_in.with(@email_address, 'Password9*')
+    @sd_vid_smoke.go_to_lessons
+    @sd_vid_smoke.go_to_video_and_play('/app/lesson/video/102', '/app/lesson/video/452', 10, 'Relating With Money')
+    @sd_vid_smoke.play_selected_video
+    @sd_vid_smoke.wait_for_currently_playing
+    @sd_vid_smoke.set_video_position(1333)
+    @sd_vid_smoke.switch_to_current_window
+    @sd_vid_smoke.wait_for_video5_to_complete(200)
+    @sd_lesson_quiz.answer_quiz_question('The number-one cause of divorce in North America is _________.','label_for_q1_a2','Yes. A huge majority of those who divorce report that it is due to money fights and money problems.' )
+    @sd_lesson_quiz.answer_quiz_question('Money represents the _________ from which a family operates.','label_for_q2_a4','Fantastic! Well done.' )
+    @sd_lesson_quiz.answer_quiz_question('Who would be the best person to prepare the first draft of the budget?','label_for_q3_a3','Yes! The Nerd is probably best equipped to put together the first draft—but then it must be discussed. Good job.' )
+    @sd_lesson_quiz.answer_quiz_question('What is the purpose of the monthly budget committee meeting?','label_for_q4_a1','Fantastic. That is correct. You both need to agree on a plan—and then stick to it.' )
+    @sd_lesson_quiz.answer_quiz_last('For men, money represents __________; for women, money represents _____________.','label_for_q5_a2','That is correct. Men and women tend to view money differently.' )
+  end 
+
+  it 'BUILDING A BUDGET video should complete without error', :run_on_sauce => true do
+    @sd_log_in.with(@email_address, 'Password9*')
+    @sd_vid_smoke.go_to_lessons
+    @sd_vid_smoke.go_to_video_and_play('/app/lesson/video/122', '/app/lesson/video/472', 10, 'Building a Budget')
+    @sd_vid_smoke.play_selected_video
+    @sd_vid_smoke.wait_for_currently_playing
+    @sd_vid_smoke.set_video_position(1212)
+    @sd_vid_smoke.switch_to_current_window
+    @sd_vid_smoke.wait_for_video6_to_complete(200)
+    @sd_lesson_quiz.answer_quiz_question('The recommended way to budget is the _______-based budget.','label_for_q1_a3','Correct. A zero-based budget assigns every dollar a task. Great job!' )
+    @sd_lesson_quiz.answer_quiz_question('What is the envelope system?','label_for_q2_a1','Great! Envelopes for such things as food, fuel and clothing really help keep your budget balanced. Way to go!')
+    @sd_lesson_quiz.answer_quiz_question('True or false? Electronic bill payments (ePayments) are a great way to pay utility bills.','label_for_q3_a2','Yes they are. Just make sure you keep track of them in your budget.' )
+    @sd_lesson_quiz.answer_quiz_question('Related to your checking account, what does NSF stand for?','label_for_q4_a4','Exactly! You did not have enough money in your account to cover your purchase so the bank charged you a huge fee to penalize you. Ouch!' )
+    @sd_lesson_quiz.answer_quiz_last('What is Baby Step 3?','label_for_q5_a2','Fantastic! That is the goal to shoot for—just figure out what your expenses are for that amount of time then keep it in savings.' )
+  end
+
+  it 'BREAKING THE CHAINS OF DEBT video should complete without error', :run_on_sauce => true do
+    @sd_log_in.with(@email_address, 'Password9*')
+    @sd_vid_smoke.go_to_lessons
+    @sd_vid_smoke.go_to_video_and_play('/app/lesson/video/142', '/app/lesson/video/492', 10, 'Breaking the Chains of Debt')
+    @sd_vid_smoke.play_selected_video
+    @sd_vid_smoke.wait_for_currently_playing
+    @sd_vid_smoke.set_video_position(850)
+    @sd_vid_smoke.switch_to_current_window
+    @sd_vid_smoke.wait_for_video7_to_complete(200)
+    @sd_lesson_quiz.answer_quiz_question('True or false? Debt is just a way of life—always has been, always will be.','label_for_q1_a1','Exactly. Consumer debt is a relatively recent product. You can live life debt free.')
+    @sd_lesson_quiz.answer_quiz_question('_________ is one of the most aggressively marketed products today.','label_for_q2_a3','Yes! The marketing of credit is big business just so you can rack up more debt.')
+    @sd_lesson_quiz.answer_quiz_question('A lot of people are confused with what it means to be debt-free. From these four examples, identify who really is debt-free.','label_for_q3_a2','Yes! Wouldn’t that feel great to have no debt hanging over you?')
+    @sd_lesson_quiz.answer_quiz_question('The FICO score is really an “________” score.','label_for_q4_a4','Exactly. All of the measurements used to factor your FICO score relate to debt in some form.')
+    @sd_lesson_quiz.answer_quiz_last('The quickest and best way to build wealth is to _____________.','label_for_q5_a1','Yes! And he preferred cash payments. Good job!')
+  end
+
+  it 'DUMPING DEBT video should complete without error', :run_on_sauce => true do
+    @sd_log_in.with(@email_address, 'Password9*')
+    @sd_vid_smoke.go_to_lessons
+    @sd_vid_smoke.go_to_video_and_play('/app/lesson/video/182', '/app/lesson/video/532', 10, 'Dumping Debt')
+    @sd_vid_smoke.play_selected_video
+    @sd_vid_smoke.wait_for_currently_playing
+    @sd_vid_smoke.set_video_position(1408)
+    @sd_vid_smoke.switch_to_current_window
+    @sd_vid_smoke.wait_for_video8_to_complete(200)
+    @sd_lesson_quiz.answer_quiz_question('True or false? Debt is a tool that should be used to create prosperity.','label_for_q1_a2','Exactly! Remember: On average, people send 24% of their take-home pay to debt payments!')
+    @sd_lesson_quiz.answer_quiz_question('When surveyed, 75% of the Forbes 400 said this was the key to building wealth:','label_for_q2_a3','Yes! Once you are debt-free, you can make the most out of your largest wealth-building tool: your income.')
+    @sd_lesson_quiz.answer_quiz_question('What is the first step to getting out of debt?','label_for_q3_a3','Exactly! In order to break the cycle of debt you need to start by stopping the destructive behavior.')
+    @sd_lesson_quiz.answer_quiz_question('Listing your debts, smallest to largest, is the first step of the ___________.','label_for_q4_a4','Exactly. As you pay off each smaller debt, you pick up more money to use to attack the other debts.')
+    @sd_lesson_quiz.answer_quiz_last('If you had the following four credit card debts, which would be the first one to attack if you were following the debt snowball?','label_for_q5_a1','That is correct. Always pay the smallest debt first, regardless of interest rate. Once that one is gone, roll the payment into the next smallest.')
+  end
+
+  it 'THE TRUTH ABOUT DEBT video should complete without error', :run_on_sauce => true do
+    @sd_log_in.with(@email_address, 'Password9*')
+    @sd_vid_smoke.go_to_lessons
+    @sd_vid_smoke.go_to_video_and_play('/app/lesson/video/162', '/app/lesson/video/512', 10, 'The Truth About Debt')
+    @sd_vid_smoke.play_selected_video
+    @sd_vid_smoke.wait_for_currently_playing
+    @sd_vid_smoke.set_video_position(1447)
+    @sd_vid_smoke.switch_to_current_window
+    @sd_vid_smoke.wait_for_video9_to_complete(200)
+    @sd_lesson_quiz.answer_quiz_question('What is it you can do with a credit card that you can’t do with a debit card?','label_for_q1_a4','Exactly. You can use a debit card anywhere and for anything you would use a credit card.')
+    @sd_lesson_quiz.answer_quiz_question('Fast-food restaurants discovered that people _______________ when they pay with plastic instead of cash.','label_for_q2_a3','Exactly. Great job!')
+    @sd_lesson_quiz.answer_quiz_question('Leasing a car is the _______________ way to operate a vehicle.','label_for_q3_a2','Yes! Car dealers make more money when you lease.')
+    @sd_lesson_quiz.answer_quiz_question('A new car loses what percentage of its value within the first four years?','label_for_q4_a3','Yes. Can you believe it? If you take out a loan for that car, you will probably owe more than the car is worth after just four years.')
+    @sd_lesson_quiz.answer_quiz_last('You can’t ___________ your way out of debt.','label_for_q5_a1','Exactly. Taking on more debt or just moving debts around won’t change your behavior.')
+  end
+
+  it 'THE PINNACLE POINT video should complete without error', :run_on_sauce => true do
+    @sd_log_in.with(@email_address, 'Password9*')
+    @sd_vid_smoke.go_to_lessons
+    @sd_vid_smoke.go_to_video_and_play('/app/lesson/video/202', '/app/lesson/video/552', 10, 'The Pinnacle Point')
+    @sd_vid_smoke.play_selected_video
+    @sd_vid_smoke.wait_for_currently_playing
+    @sd_vid_smoke.set_video_position(784)
+    @sd_vid_smoke.switch_to_current_window
+    @sd_vid_smoke.wait_for_video10_to_complete(201)
+    @sd_lesson_quiz.answer_quiz_question('What is the pinnacle point, related to investing?','label_for_q1_a2','Yes! This is the point where your money is truly working for you.' )
+    @sd_lesson_quiz.answer_quiz_question('What is considered long-term investing?','label_for_q2_a3','Exactly. This is money you are going to invest and leave alone so compound interest can work its magic.' )
+    @sd_lesson_quiz.answer_quiz_question('What is Baby Step 4?','label_for_q3_a1','Yep. 15%, not 10% and not 18%. Just 15%. There are other Baby Steps to attack.' )
+    @sd_lesson_quiz.answer_quiz_question('Dave said, "If you think money is ___________, you will never do anything with it."','label_for_q4_a1','Exactly. Good job.' )
+    @sd_lesson_quiz.answer_quiz_last('Money, by itself, is not good or evil; it is _______________.','label_for_q5_a4','Correct. Money has no morals. It is neither good nor bad; it is just money.' )
+  end
+
+  it 'INVESTING BASICS video should complete without error', :run_on_sauce => true do
+    @sd_log_in.with(@email_address, 'Password9*')
+    @sd_vid_smoke.go_to_lessons
+    @sd_vid_smoke.go_to_video_and_play('/app/lesson/video/222', '/app/lesson/video/572', 10, 'Investing Basics')
+    @sd_vid_smoke.play_selected_video
+    @sd_vid_smoke.wait_for_currently_playing
+    @sd_vid_smoke.set_video_position(1335)
+    @sd_vid_smoke.switch_to_current_window
+    @sd_vid_smoke.wait_for_video11_to_complete(201)
+    @sd_lesson_quiz.answer_quiz_question('Zero dollars invested at 12% will provide you how much over 40 years?','label_for_q1_a1','Absolutely. If you don’t invest any money, you won’t earn any money. There is no retirement fairy waiting to bless you.' )
+    @sd_lesson_quiz.answer_quiz_question('Which of the following is not used as an example of the market?','label_for_q2_a3','Correct! While it is a lot of fun, flinging flying discs around a wooded park has nothing to do with the market. Unless you are just haphazardly flinging money at investments—and we don’t recommend that.' )
+    @sd_lesson_quiz.answer_quiz_question('Two months after the 9/11 terrorist attacks, the market __________.','label_for_q3_a2','Absolutely! Within two months, the market was back to where it had been the day before the attacks.' )
+    @sd_lesson_quiz.answer_quiz_question('What can you do to avoid the risk of inflation?','label_for_q4_a3','Exactly. You need to avoid having your investments get tackled from behind when they are earning less than inflation.' )
+    @sd_lesson_quiz.answer_quiz_last('What does diversification mean?','label_for_q5_a4','Correct. The best way to protect your investment eggs is to put them in a bunch of different baskets.' )
+  end
+
+  it 'RETIREMENT PLANS video should complete without error', :run_on_sauce => true do
+    @sd_log_in.with(@email_address, 'Password9*')
+    @sd_vid_smoke.go_to_lessons
+    @sd_vid_smoke.go_to_video_and_play('/app/lesson/video/242', '/app/lesson/video/592', 10, 'Retirement Plans')
+    @sd_vid_smoke.play_selected_video
+    @sd_vid_smoke.wait_for_currently_playing
+    @sd_vid_smoke.set_video_position(1399)
+    @sd_vid_smoke.switch_to_current_window
+    @sd_vid_smoke.wait_for_video12_to_complete(201)
+    @sd_lesson_quiz.answer_quiz_question('What are the three main types of investments identified in this lesson?','label_for_q1_a2','Yes, that is correct. Great job!' )
+    @sd_lesson_quiz.answer_quiz_question('True or false? Buying single stocks is a great way to build wealth.','label_for_q2_a2','Correct. Always buy stock within mutual funds that contain lots of different stocks.' )
+    @sd_lesson_quiz.answer_quiz_question('What does “tax-deferred” mean?','label_for_q3_a3','Correct. You will still have to pay taxes on the money, but not until you take it out, preferably at retirement.' )
+    @sd_lesson_quiz.answer_quiz_question('What is a 401(k)?','label_for_q4_a1','Yes. And if your company provides matching funds, that ends up being extra “free money” to help you prepare for retirement.' )
+    @sd_lesson_quiz.answer_quiz_last('What is the big deal with a Roth 401(k)?','label_for_q5_a4','Exactly! And you know what we call tax-free: free money! That is a great thing, so take advantage of Roth plans.' )
+  end
+
+  it 'KEEP IT SIMPLE video should complete without error', :run_on_sauce => true do
+    @sd_log_in.with(@email_address, 'Password9*')
+    @sd_vid_smoke.go_to_lessons
+    @sd_vid_smoke.go_to_video_and_play('/app/lesson/video/262', '/app/lesson/video/612', 10, 'Keep It Simple')
+    @sd_vid_smoke.play_selected_video
+    @sd_vid_smoke.wait_for_currently_playing
+    @sd_vid_smoke.set_video_position(865)
+    @sd_vid_smoke.switch_to_current_window
+    @sd_vid_smoke.wait_for_video13_to_complete(201)
+    @sd_lesson_quiz.answer_quiz_question('True or false? Borrowing against your 401(k) is a great way to get cash to pay for a car or an emergency.','label_for_q1_a2','Correct. You should never borrow against your 401(k) except to avoid bankruptcy or foreclosure. It is a terrible idea.' )
+    @sd_lesson_quiz.answer_quiz_question('If you borrow against your 401(k) then leave your company—for whatever reason—how long do you have to pay back the loan in full?','label_for_q2_a3','Correct. The entire amount has to be paid back within 60 days or you will get hammered by a 10% penalty plus taxes.' )
+    @sd_lesson_quiz.answer_quiz_question('True or false? The best thing to do with your 401(k) when you leave your company is to bring the money home with you.','label_for_q3_a2','Correct. Always check with an investment professional for the best option for you in your particular situation.' )
+    @sd_lesson_quiz.answer_quiz_question('Why are foreign currencies not a good investment option?','label_for_q4_a1','Exactly. And their value is based on trust that the foreign economy will rebound—which is generally unlikely.' )
+    @sd_lesson_quiz.answer_quiz_last('What is the best way to get rich quick?','label_for_q5_a4','Exactly. Don’t overcomplicate your investment plan. Just do simple things over and over again.' )
+  end
+
+  it 'COLLEGE AND HOUSES video should complete without error', :run_on_sauce => true do
+    @sd_log_in.with(@email_address, 'Password9*')
+    @sd_vid_smoke.go_to_lessons
+    @sd_vid_smoke.go_to_video_and_play('/app/lesson/video/282', '/app/lesson/video/632', 10, 'College and Houses')
+    @sd_vid_smoke.play_selected_video
+    @sd_vid_smoke.wait_for_currently_playing
+    @sd_vid_smoke.set_video_position(976)
+    @sd_vid_smoke.switch_to_current_window
+    @sd_vid_smoke.wait_for_video14_to_complete(201)
+    @sd_lesson_quiz.answer_quiz_question('What are the two smart things that people often do in a dumb way by withdrawing from a 401(k) account?','label_for_q1_a2','Yes, these are both Baby Steps (5 and 6) and smart things to do, but don’t withdraw from your 401(k) to pay for them.' )
+    @sd_lesson_quiz.answer_quiz_question('True or false? There is nothing wrong with renting for a little while. It demonstrates patience and wisdom.','label_for_q2_a1','True or false? There is nothing wrong with renting for a little while. It demonstrates patience and wisdom. ' )
+    @sd_lesson_quiz.answer_quiz_question('When are you ready to buy a house?','label_for_q3_a3','That is correct. But, it takes patience and focus to get to this point.' )
+    @sd_lesson_quiz.answer_quiz_question('The 100%-down plan is the best plan to purchase a home. What percentage of first-time homebuyers actually do that?','label_for_q4_a1','Exactly! That means they won’t have a house payment and can save more money for retirement! Amazing!' )
+    @sd_lesson_quiz.answer_quiz_last('Why is a 15-year mortgage better than a 30-year mortgage?','label_for_q5_a4','Correct. You will pay down the principal much quicker and pay a lower total overall with a 15-year mortgage.' )
+  end
+
+  it 'INSURANCE BASICS video should complete without error', :run_on_sauce => true do
+    @sd_log_in.with(@email_address, 'Password9*')
+    @sd_vid_smoke.go_to_lessons
+    @sd_vid_smoke.go_to_video_and_play('/app/lesson/video/302', '/app/lesson/video/652', 10, 'Insurance Basics')
+    @sd_vid_smoke.play_selected_video
+    @sd_vid_smoke.wait_for_currently_playing
+    @sd_vid_smoke.set_video_position(307)
+    @sd_vid_smoke.switch_to_current_window
+    @sd_vid_smoke.wait_for_video15_to_complete(201)
+    @sd_lesson_quiz.answer_quiz_question('It is important to take steps to ________________ your investments.','label_for_q1_a2','Exactly. You need to understand the defensive strategies associated with insurances.' )
+    @sd_lesson_quiz.answer_quiz_question('If you are not properly covered with insurances, an accident or lawsuit could ________________________.','label_for_q2_a4','Exactly. The proper insurances provide protection from bankruptcy in the event of an accident or lawsuit.' )
+    @sd_lesson_quiz.answer_quiz_question('The seven recommended insurances everyone should have are term life insurance, homeowner’s or renter’s insurance, auto insurance, health insurance, ___________________, long-term care insurance and identity theft protection.','label_for_q3_a3','Yes. This is one of the most overlooked areas of insurance. You need this.' )
+    @sd_lesson_quiz.answer_quiz_question('Insurances are a ___________ part of your retirement planning.','label_for_q4_a1','Absolutely. Without the proper insurances, you could be putting all of your retirement savings at risk.' )
+    @sd_lesson_quiz.answer_quiz_last('Related to insurance coverage: If someone else takes _____________ you get to keep ____________________.','label_for_q5_a2','Exactly correct!' )
+  end
+
+  it 'LIFE INSURANCE video should complete without error', :run_on_sauce => true do
+    @sd_log_in.with(@email_address, 'Password9*')
+    @sd_vid_smoke.go_to_lessons
+    @sd_vid_smoke.go_to_video_and_play('/app/lesson/video/322', '/app/lesson/video/672', 10, 'Life Insurance')
+    @sd_vid_smoke.play_selected_video
+    @sd_vid_smoke.wait_for_currently_playing
+    @sd_vid_smoke.set_video_position(1212)
+    @sd_vid_smoke.switch_to_current_window
+    @sd_vid_smoke.wait_for_video16_to_complete(201)
+    @sd_lesson_quiz.answer_quiz_question('Life insurance is important because _________________________ .','label_for_q1_a2','Exactly. In the event of your death, you want to be able to provide for the financial needs of your spouse.' )
+    @sd_lesson_quiz.answer_quiz_question('__________ insurance is for a specified period of time and is substantially cheaper.','label_for_q2_a4','Exactly! The price difference between term life insurance and the other cash value type of products is huge. If you will invest the difference, you will actually have a huge nest egg to use at retirement or pass to your family at your death.' )
+    @sd_lesson_quiz.answer_quiz_question('What does it mean to be self-insured?','label_for_q3_a1','That is correct! If you have followed the Baby Steps and done wise financial planning, your need for life insurance goes away.' )
+    @sd_lesson_quiz.answer_quiz_question('If your annual salary is $50,000, what amount of 20-year, level-term life insurance should you purchase as a minimum?','label_for_q4_a3','Yes. We recommend coverage amounts of 10–12 times your current income.' )
+    @sd_lesson_quiz.answer_quiz_last('Everyone over the age of 18 needs to have a _________.','label_for_q5_a4','Exactly. A key to wise financial planning is having a proper and legal plan for what happens to your stuff after you die.' )
+  end
+
+  it 'RETIRE WITH DIGNITY video should complete without error', :run_on_sauce => true do
+    @sd_log_in.with(@email_address, 'Password9*')
+    @sd_vid_smoke.go_to_lessons
+    @sd_vid_smoke.go_to_video_and_play('/app/lesson/video/342', '/app/lesson/video/692', 10, 'Retire with Dignity')
+    @sd_vid_smoke.play_selected_video
+    @sd_vid_smoke.wait_for_currently_playing
+    @sd_vid_smoke.set_video_position(1624)
+    @sd_vid_smoke.wait_for_video17_to_complete(201)
+    @sd_lesson_quiz.answer_quiz_question('What did Dave describe as the most powerful financial principle of all?','label_for_q1_a2','Exactly. Contentment is powerful, and it helps you work toward financial goals.' )
+    @sd_lesson_quiz.answer_quiz_question('Which of the following is NOT a sign of discontentment?','label_for_q2_a4','Correct. Actually, this is one of the results of finding contentment.' )
+    @sd_lesson_quiz.answer_quiz_question('What is Baby Step 7?','label_for_q3_a3','Exactly. When you are debt-free and your house is paid for, you have lots of extra money you can use to invest, build wealth, and impact the lives of others. Pretty cool!' )
+    @sd_lesson_quiz.answer_quiz_question('As your understanding of building wealth develops, you will move through four stages: NOW, THEN, US and ______.','label_for_q4_a3','Exactly. When you build wealth and take care of your family’s needs, it becomes much easier—and fun—to use some of your money to meet the needs of others.' )
+    @sd_lesson_quiz.answer_quiz_last('The Havdalah cup is a visual representation of your financial _____________ being used for the good of others.','label_for_q5_a1','Exactly. After you take care of the needs of your family, look to see how you can impact the world around you.' )
+  end
+end
+

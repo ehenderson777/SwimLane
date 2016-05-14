@@ -1,0 +1,15 @@
+source "https://rubygems.org"
+
+gem 'log4net', '~> 1.2'
+gem 'selenium-webdriver', '~> 2.47.1'
+gem 'rspec', '~> 3.4.0'
+gem 'parallel_tests', '~> 2.0.0'
+gem 'sauce'
+gem 'sauce_whisk', '~> 0.0.19'
+gem 'sauce-connect'
+gem 'pry'
+gem 'pry-byebug'
+gem 'pry-stack_explorer'
+gem 'pry-rescue'
+gem 'rake', '~> 10.4.2'
+gem 'byebug'
